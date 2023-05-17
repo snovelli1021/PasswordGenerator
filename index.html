@@ -12,9 +12,34 @@
       <header>
         <h1>Password Generator</h1>
       </header>
+
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Generate Your Password</h2>
+          <p>Please enter a number between 1 and 20.</p>
+          <label for="passwordLength">Password Length:</label>
+          <input type="number" id="passwordLength" min="8" max="24" />
+          <br />
+          <p>
+            Please select a combination of checkboxes to create your password!
+          </p>
+          <label
+            ><input type="checkbox" id="checkLowercase" />Lowercase
+            Letters</label
+          >
+          <br />
+          <label
+            ><input type="checkbox" id="checkUppercase" />Uppercase
+            Letters</label
+          >
+          <br />
+          <label><input type="checkbox" id="checkNumbers" />Numbers</label>
+          <br />
+          <label
+            ><input type="checkbox" id="checkSpecialChars" />Special
+            Characters</label
+          >
+          <br />
         </div>
         <div class="card-body">
           <textarea
