@@ -16,7 +16,7 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate Your Password</h2>
-          <p>Please enter a number between 1 and 20.</p>
+          <p>Please enter a number between 8 and 24.</p>
           <label for="passwordLength">Password Length:</label>
           <input type="number" id="passwordLength" min="8" max="24" />
           <br />
@@ -49,8 +49,11 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <!-- Runs generatePassword function on click. -->
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button onclick="generatePassword()" id="generate" class="btn">
+            Generate Password
+          </button>
         </div>
       </div>
     </div>
