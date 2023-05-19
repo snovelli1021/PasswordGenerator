@@ -1,3 +1,4 @@
+/* Using CSS reset. */
 *,
 *::before,
 *::after {
@@ -12,9 +13,10 @@ body,
   padding: 0;
 }
 
+/* Begin styling page. */
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: hsl(0, 57%, 88%);
 }
 
 .wrapper {
@@ -34,7 +36,7 @@ header {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
@@ -50,6 +52,80 @@ header {
   height: 2px;
 }
 
+input {
+  margin-bottom: 4%;
+  margin-left: 2%;
+}
+
+.appHelp {
+  font-size: 12px;
+  color: #434141;
+}
+
+/* Styles the container and the checkboxes it holds. */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 30%;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #e7e9eb;
+  border-radius: 20%;
+}
+
+.container:hover input ~ .checkBox {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkBox {
+  background-color: hsl(360, 91%, 36%);
+}
+
+.checkBox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkBox:after {
+  display: block;
+}
+
+.container .checkBox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Styles the card, generated password output, and button. */
 .card-body {
   min-height: 100px;
 }
@@ -118,6 +194,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Form factores app to various screen sizes. */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
